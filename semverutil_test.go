@@ -12,15 +12,12 @@ import (
 
 func TestCheck(t *testing.T) {
 	tests := []struct {
-		version1   string
 		comparison string
 		version2   string
 		expVal     bool
 	}{
 		{version1: "1.0.c", comparison: ">", version2: "0.9", expVal: false},
 		{version1: "1.0.1", comparison: ">", version2: "0.9.a", expVal: false},
-
-		{version1: "7.2", comparison: ">=", version2: "5.1", expVal: true},
 		{version1: "1.8.3.1", comparison: ">=", version2: "1.8.3", expVal: true},
 		{version1: "0.12.0+dev", comparison: ">=", version2: "0.11.68.1023", expVal: true},
 	}
